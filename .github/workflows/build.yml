@@ -35,7 +35,7 @@ jobs:
         #githubOrg: override-org # optional
         image: github-repo/image-name
         registry: docker.pkg.github.com
-        run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u ${{ secrets.GHCR_USERNAME   }} --password-stdin ghcr.io
+        #run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u ${{ secrets.GHCR_USERNAME   }} --password-stdin ghcr.io
         username: ${{ secrets.GHCR_USERNAME }}
         password: ${{ secrets.GHCR_TOKEN }}    
 
