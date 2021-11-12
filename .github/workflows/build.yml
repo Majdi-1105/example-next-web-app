@@ -34,11 +34,11 @@ jobs:
         image: node
         registry: ghcr.io
         githubOrg: override-org # optional
-        username: Majdi1105
-        password: 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
-        # username: ${{ secrets.GHCR_USERNAME }}
-        # password: ${{ secrets.GHCR_TOKEN }}
-      #run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u ${{ secrets.GHCR_USERNAME   }} --password-stdin ghcr.io
+        run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u ${{ secrets.GHCR_USERNAME   }} --password-stdin ghcr.io
+        # username: Majdi1105
+        # password: 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
+        username: ${{ secrets.GHCR_USERNAME }}
+        password: ${{ secrets.GHCR_TOKEN }}    
       #run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u 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 --password-stdin ghcr.io
 
   # Build and push container
