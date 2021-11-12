@@ -7,9 +7,9 @@ name: Create and publish a Docker image
 on:
 # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [master, main ]
   pull_request:
-    branches: [ main ]
+    branches: [master, main ]
 # Allows you to run this workflow manually from the Actions tab
 #name: Main Workflow
 
@@ -31,14 +31,14 @@ jobs:
     - name: Login to GitHub Container Registry
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        registry: ghcr.io
-        githubOrg: override-org # optional
+        #registry: ghcr.io
+        #githubOrg: override-org # optional
+        image: github-repo/image-name
+        registry: docker.pkg.github.com
         run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u ${{ secrets.GHCR_USERNAME   }} --password-stdin ghcr.io
-        # username: Majdi1105
-        # password: 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
         username: ${{ secrets.GHCR_USERNAME }}
         password: ${{ secrets.GHCR_TOKEN }}    
-      #run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u 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 --password-stdin ghcr.io
+
 
   # Build and push container
     - name: Build and push
