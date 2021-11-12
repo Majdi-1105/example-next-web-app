@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    -uses: mr-smithers-excellent/docker-build-push@v5
-     with:
-      image: node
-      registry: ghcr.io
-      githubOrg: override-org # optional
-      username: ${{ secrets.GHCR_USERNAME }}
-      password: ${{ secrets.GHCR_TOKEN }}
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: node
+        registry: ghcr.io
+        githubOrg: override-org # optional
+        username: ${{ secrets.GHCR_USERNAME }}
+        password: ${{ secrets.GHCR_TOKEN }}
