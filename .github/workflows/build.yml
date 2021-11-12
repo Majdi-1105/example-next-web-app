@@ -31,7 +31,6 @@ jobs:
     - name: Login to GitHub Container Registry
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: node
         registry: ghcr.io
         githubOrg: override-org # optional
         run: echo ${{ secrets.GHCR_TOKEN  }} | docker login -u ${{ secrets.GHCR_USERNAME   }} --password-stdin ghcr.io
